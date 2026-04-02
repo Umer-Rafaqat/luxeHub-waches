@@ -1,0 +1,153 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+}
+
+.card:hover {
+  border-color: rgba(201,168,76,0.3);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), var(--shadow-gold);
+}
+
+.imageWrap {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--dark-3);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  z-index: 1;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 0.6rem 1.2rem;
+  backdrop-filter: blur(4px);
+}
+
+.info {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: var(--gold);
+}
+
+.name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--white);
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+}
+
+.prices {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.original {
+  font-size: 0.75rem;
+  color: var(--gray);
+  text-decoration: line-through;
+}
+
+.addBtn {
+  width: 36px;
+  height: 36px;
+  background: var(--gold);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition-fast);
+}
+
+.addBtn:hover { background: var(--gold-light); }
+
+.colors {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.colorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--gray);
+  border: 1px solid rgba(255,255,255,0.2);
+}

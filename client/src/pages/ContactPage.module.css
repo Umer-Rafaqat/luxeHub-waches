@@ -1,0 +1,186 @@
+.page { min-height: 100vh; }
+
+.hero {
+  padding-top: 160px;
+  padding-bottom: 5rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  max-width: 460px;
+  margin: 0 auto;
+}
+
+.section { padding: 5rem 0; }
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* Contact cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  transition: border-color var(--transition-fast);
+  cursor: default;
+}
+
+a.card { cursor: pointer; }
+a.card:hover { border-color: rgba(255,255,255,0.2); }
+
+.cardIcon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.card h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.card p {
+  font-size: 0.78rem;
+  color: var(--gray);
+  line-height: 1.5;
+}
+
+.card span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: 0.25rem;
+}
+
+/* Form */
+.formCard {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem;
+}
+
+.formCard h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.formNote {
+  font-size: 0.82rem;
+  color: var(--gray);
+  margin-bottom: 2rem;
+}
+
+.form { display: flex; flex-direction: column; gap: 1.25rem; }
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+
+.field label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.field input,
+.field textarea {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  padding: 0.85rem 1rem;
+  font-size: 0.88rem;
+  font-family: var(--font-sans);
+  outline: none;
+  resize: vertical;
+  transition: border-color var(--transition-fast);
+}
+
+.field input:focus,
+.field textarea:focus { border-color: var(--gold); }
+
+.field input::placeholder,
+.field textarea::placeholder { color: rgba(255,255,255,0.2); }
+
+.submitBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: #25D366;
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 1rem 2rem;
+  align-self: flex-start;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.submitBtn:hover {
+  background: #1ebe5d;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 700px) {
+  .cards { grid-template-columns: 1fr; }
+  .row { grid-template-columns: 1fr; }
+  .formCard { padding: 2rem 1.25rem; }
+  .submitBtn { align-self: stretch; }
+}

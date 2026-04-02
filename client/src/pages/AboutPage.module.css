@@ -1,0 +1,169 @@
+.page { min-height: 100vh; }
+
+.hero {
+  padding-top: 160px;
+  padding-bottom: 5rem;
+  text-align: center;
+  background: linear-gradient(180deg, rgba(201,168,76,0.06) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  color: var(--gray);
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.section { padding: 5rem 0; }
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.descCard {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 3rem;
+  text-align: center;
+}
+
+.watchIcon {
+  color: var(--gold);
+  margin-bottom: 1.5rem;
+}
+
+.descCard h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.descCard p {
+  font-size: 0.95rem;
+  color: var(--gray-light);
+  line-height: 1.8;
+  max-width: 620px;
+  margin: 0 auto 1rem;
+}
+
+.descCard strong { color: var(--gold); font-weight: 600; }
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.highlightCard {
+  background: var(--dark-2);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: border-color var(--transition-fast);
+}
+
+.highlightCard:hover { border-color: rgba(201,168,76,0.3); }
+
+.highlightEmoji { font-size: 2rem; display: block; margin-bottom: 1rem; }
+
+.highlightCard h3 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 0.6rem;
+}
+
+.highlightCard p {
+  font-size: 0.82rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.contactCard {
+  background: var(--dark-2);
+  border: 1px solid rgba(201,168,76,0.2);
+  padding: 3rem;
+  text-align: center;
+}
+
+.contactCard h2 {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 2rem;
+}
+
+.contactLinks {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contactBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.75rem;
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--gray-light);
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.contactBtn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.cta { text-align: center; }
+
+.ctaBtn {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--black);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  transition: background var(--transition-fast);
+}
+
+.ctaBtn:hover { background: var(--gold-light); }
+
+@media (max-width: 700px) {
+  .highlights { grid-template-columns: 1fr; }
+  .descCard, .contactCard { padding: 2rem 1.25rem; }
+}
