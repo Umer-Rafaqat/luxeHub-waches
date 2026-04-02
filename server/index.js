@@ -16,8 +16,11 @@ app.use(cors({
       'http://localhost:5174',
       'http://localhost:5175',
       process.env.CLIENT_URL,
+      'https://luxe-hub-waches.vercel.app',
     ].filter(Boolean);
-    if (!origin || allowed.includes(origin)) return callback(null, true);
+    if (!origin || allowed.some(o => origin === o || origin.endsWith('.vercel.app'))) {
+      return callback(null, true);
+    }
     callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
