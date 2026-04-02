@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Routes, Route, NavLink, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { LayoutDashboard, Package, ShoppingCart, Users, LogOut, Watch, ChevronRight } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import AdminDashboard from './AdminDashboard';
@@ -27,15 +26,17 @@ export default function AdminPage() {
 
   if (!user?.isAdmin) return null;
 
+  const handleLogout = () => { logout(); navigate('/'); };
+
   return (
     <div className={styles.layout}>
-      {/* Sidebar */}
+
+      {/* Desktop Sidebar */}
       <aside className={styles.sidebar}>
         <div className={styles.sidebarLogo}>
           <Watch size={20} strokeWidth={1.5} />
           <span>Luxe Hub Admin</span>
         </div>
-
         <nav className={styles.nav}>
           {NAV.map(({ to, label, icon: Icon, end }) => (
             <NavLink
@@ -50,7 +51,6 @@ export default function AdminPage() {
             </NavLink>
           ))}
         </nav>
-
         <div className={styles.sidebarFooter}>
           <div className={styles.adminInfo}>
             <div className={styles.adminAvatar}>{user.name?.charAt(0).toUpperCase()}</div>
@@ -59,13 +59,24 @@ export default function AdminPage() {
               <p className={styles.adminRole}>Administrator</p>
             </div>
           </div>
-          <button className={styles.logoutBtn} onClick={() => { logout(); navigate('/'); }}>
+          <button className={styles.logoutBtn} onClick={handleLogout}>
             <LogOut size={16} strokeWidth={1.5} />
           </button>
         </div>
       </aside>
 
-      {/* Main */}
+      {/* Mobile Top Header */}
+      <div className={styles.mobileHeader}>
+        <div className={styles.mobileHeaderLogo}>
+          <Watch size={18} strokeWidth={1.5} />
+          <span>Luxe Hub Admin</span>
+        </div>
+        <button className={styles.mobileLogoutBtn} onClick={handleLogout}>
+          <LogOut size={18} strokeWidth={1.5} />
+        </button>
+      </div>
+
+      {/* Main Content */}
       <main className={styles.main}>
         <Routes>
           <Route index element={<AdminDashboard />} />
@@ -74,6 +85,22 @@ export default function AdminPage() {
           <Route path="users" element={<AdminUsers />} />
         </Routes>
       </main>
+
+      {/* Mobile Bottom Nav */}
+      <nav className={styles.mobileNav}>
+        {NAV.map(({ to, label, icon: Icon, end }) => (
+          <NavLink
+            key={to}
+            to={to}
+            end={end}
+            className={({ isActive }) => `${styles.mobileNavItem} ${isActive ? styles.mobileNavActive : ''}`}
+          >
+            <Icon size={20} strokeWidth={1.5} />
+            <span>{label}</span>
+          </NavLink>
+        ))}
+      </nav>
+
     </div>
   );
 }

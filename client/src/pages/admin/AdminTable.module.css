@@ -440,7 +440,12 @@
 .deliverBtn:hover { background: rgba(52,211,153,0.1); }
 
 @media (max-width: 768px) {
-  .page { padding: 1.25rem; }
+  .page { padding: 1rem; }
   .formGrid { grid-template-columns: 1fr; }
   .fieldFull { grid-column: 1; }
+  .title { font-size: 1.5rem; }
+  .header { flex-direction: column; align-items: flex-start; }
+  .headerActions { width: 100%; }
+  .searchWrap { flex: 1; }
+  .searchWrap input { width: 100%; }
 }
