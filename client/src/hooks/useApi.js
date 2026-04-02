@@ -13,7 +13,14 @@ export function useProducts(params = {}) {
   useEffect(() => {
     setLoading(true);
     api.get('/products', { params })
-      .then((res) => setData(res.data))
+      .then((res) => {
+        const d = res.data;
+        setData({
+          products: Array.isArray(d.products) ? d.products : [],
+          total: d.total || 0,
+          pages: d.pages || 1,
+        });
+      })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, [JSON.stringify(params)]);
@@ -44,7 +51,7 @@ export function useFeaturedProducts() {
 
   useEffect(() => {
     api.get('/products/featured')
-      .then((res) => setProducts(res.data))
+      .then((res) => setProducts(Array.isArray(res.data) ? res.data : []))
       .finally(() => setLoading(false));
   }, []);
 
